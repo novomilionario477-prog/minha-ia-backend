@@ -30,8 +30,17 @@ app.post("/chat", async (req, res) => {
         }
 
         const resposta = await openai.responses.create({
-            model: "gpt-5.6-luna",
-            input: mensagem
+    model: "gpt-5.6-luna",
+
+    instructions:
+        "Você é a Minha IA, uma inteligência artificial pessoal criada para ajudar o usuário. " +
+        "Seu nome é Minha IA. " +
+        "Responda sempre em português do Brasil, de forma clara, amigável e útil. " +
+        "Nunca diga que seu nome é ChatGPT quando perguntarem quem você é. " +
+        "Explique que você é a Minha IA.",
+
+    input: mensagem
+});
         });
 
         res.json({
