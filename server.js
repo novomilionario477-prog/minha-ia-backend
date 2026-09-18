@@ -41,7 +41,7 @@ app.post("/chat", async (req, res) => {
 
     input: mensagem
 });
-        });
+
 
         res.json({
             resposta: resposta.output_text
